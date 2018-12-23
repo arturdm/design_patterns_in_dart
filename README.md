@@ -23,10 +23,46 @@ This one can be done using factory constructor.
 This singleton implementation utilizes lazy loading of global variables.
 There is also a way of implementing a singleton with a factory constructor that always returns the same instance.
 
-## Behavioural design patterns
-
 
 ## Structural design patterns
+
+### Adapter
+
+### Bridge
+
+### Composite
+
+### Decorator
+
+### Facade
+
+### Flyweight
+
+### Proxy
+
+## Behavioural design patterns
+
+### Chain Of Responsibility
+
+### Command
+
+### Interpreter
+
+### Iterator
+
+### Mediator
+
+### Memento
+
+### Observer
+
+### State
+
+### Strategy
+
+### Template Method
+
+### Visitor
 
 # References
 https://github.com/dbacinski/Design-Patterns-In-Kotlin
