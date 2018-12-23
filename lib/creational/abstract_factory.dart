@@ -10,16 +10,12 @@ abstract class CarFactory {
 
 class PetrolCarFactory extends CarFactory {
   @override
-  Car makeCar() {
-    return PetrolCar();
-  }
+  Car makeCar() => PetrolCar();
 }
 
 class ElectricCarFactory extends CarFactory {
   @override
-  Car makeCar() {
-    return ElectricCar();
-  }
+  Car makeCar() => ElectricCar();
 }
 
 void main() {

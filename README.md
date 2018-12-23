@@ -1,4 +1,4 @@
-# design_patterns_in_dart
+# Design patterns (GoF) using Dart language
 
 ## Creational design patterns
 
@@ -16,6 +16,17 @@ There is no support for inner classes.
 
 ### Factory Method
 
+This one can be done using factory constructor.
+
 ### Singleton
 
+This singleton implementation utilizes lazy loading of global variables.
+There is also a way of implementing a singleton with a factory constructor that always returns the same instance.
 
+## Behavioural design patterns
+
+
+## Structural design patterns
+
+# References
+https://github.com/dbacinski/Design-Patterns-In-Kotlin

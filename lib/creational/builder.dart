@@ -5,9 +5,7 @@ class Driver {
   Driver({String this.firstName, String this.lastName});
 
   @override
-  String toString() {
-    return "$firstName $lastName";
-  }
+  String toString() => "$firstName $lastName";
 }
 
 class DriverBuilder {
