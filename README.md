@@ -1,5 +1,16 @@
 # Design patterns (GoF) using Dart language
 
+## Table of contents
+* [Creational design patterns](#creational-design-patterns)
+    * [Abstract Factory](#abstract-factory)
+    * [Prototype](#prototype)
+    * [Builder](#builder)
+    * [Factory Method](#factory-method)
+    * [Singleton](#singleton)
+* [Structural design patterns](#structural-design-patterns)
+    * [Adapter](#adapter)
+* [Behavioural design patterns](#behavioural-design-patterns)
+
 ## Creational design patterns
 
 ### Abstract Factory
@@ -22,7 +33,6 @@ This one can be done using factory constructor.
 
 This singleton implementation utilizes lazy loading of global variables.
 There is also a way of implementing a singleton with a factory constructor that always returns the same instance.
-
 
 ## Structural design patterns
 
