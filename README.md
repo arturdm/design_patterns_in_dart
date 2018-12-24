@@ -9,6 +9,7 @@
     * [Singleton](#singleton)
 * [Structural design patterns](#structural-design-patterns)
     * [Adapter](#adapter)
+    * [Bridge](#bridge)
 * [Behavioural design patterns](#behavioural-design-patterns)
 
 ## Creational design patterns
