@@ -13,6 +13,7 @@
     * [Composite](#composite)
     * [Decorator](#decorator)
     * [Facade](#facade)
+    * [Flyweight](#flyweight)
 * [Behavioural design patterns](#behavioural-design-patterns)
 
 ## Creational design patterns
