@@ -1,5 +1,9 @@
 # Design patterns (GoF) using Dart language
 
+This repository contains sample implementations of GoF design patterns in Dart.
+
+Inspired by https://github.com/dbacinski/Design-Patterns-In-Kotlin.
+
 ## Table of contents
 * [Creational design patterns](#creational-design-patterns)
     * [Abstract Factory](#abstract-factory)
@@ -14,6 +18,7 @@
     * [Decorator](#decorator)
     * [Facade](#facade)
     * [Flyweight](#flyweight)
+    * [Proxy](#proxy)
 * [Behavioural design patterns](#behavioural-design-patterns)
 
 ## Creational design patterns
@@ -79,5 +84,3 @@ There is also a way of implementing a singleton with a factory constructor that 
 
 ### Visitor
 
-# References
-https://github.com/dbacinski/Design-Patterns-In-Kotlin
