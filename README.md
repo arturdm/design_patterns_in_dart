@@ -12,6 +12,7 @@
     * [Bridge](#bridge)
     * [Composite](#composite)
     * [Decorator](#decorator)
+    * [Facade](#facade)
 * [Behavioural design patterns](#behavioural-design-patterns)
 
 ## Creational design patterns
