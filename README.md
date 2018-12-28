@@ -20,6 +20,7 @@ Inspired by https://github.com/dbacinski/Design-Patterns-In-Kotlin.
     * [Flyweight](#flyweight)
     * [Proxy](#proxy)
 * [Behavioural design patterns](#behavioural-design-patterns)
+    * [Chain Of Responsibility](#chain-of-responsibility)
 
 ## Creational design patterns
 
@@ -63,24 +64,3 @@ There is also a way of implementing a singleton with a factory constructor that 
 ## Behavioural design patterns
 
 ### Chain Of Responsibility
-
-### Command
-
-### Interpreter
-
-### Iterator
-
-### Mediator
-
-### Memento
-
-### Observer
-
-### State
-
-### Strategy
-
-### Template Method
-
-### Visitor
-
