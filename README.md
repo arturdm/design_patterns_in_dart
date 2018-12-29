@@ -1,5 +1,7 @@
 # Design patterns (GoF) using Dart language
 
+[![Build Status](https://travis-ci.org/arturdm/design_patterns_in_dart.svg?branch=master)](https://travis-ci.org/arturdm/design_patterns_in_dart)
+
 This repository contains sample implementations of GoF design patterns in Dart.
 
 Inspired by https://github.com/dbacinski/Design-Patterns-In-Kotlin.
