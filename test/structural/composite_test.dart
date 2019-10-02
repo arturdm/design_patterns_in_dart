@@ -1,5 +1,27 @@
-import 'package:design_patterns_in_dart/structural/composite.dart';
 import 'package:test_api/test_api.dart';
+
+abstract class Widget {}
+
+class WidgetGroup implements Widget {
+  final List<Widget> children;
+
+  WidgetGroup({List<Widget> this.children});
+
+  @override
+  String toString() {
+    String shiftedChildrenString = children.join("\n").replaceAll("\n", "\n\t");
+    return "WidgetGroup\n\t${shiftedChildrenString}";
+  }
+}
+
+class TextWidget implements Widget {
+  final String text;
+
+  const TextWidget(String this.text);
+
+  @override
+  String toString() => "TextWidget('$text')";
+}
 
 Widget createWidgetTree() =>
     WidgetGroup(
