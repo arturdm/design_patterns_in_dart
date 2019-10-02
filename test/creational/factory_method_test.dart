@@ -1,5 +1,29 @@
-import 'package:design_patterns_in_dart/creational/factory_method.dart';
 import 'package:test_api/test_api.dart';
+
+abstract class Currency {
+  final String name;
+
+  Currency._internal(String this.name);
+
+  factory Currency.forCode(String code) {
+    switch (code) {
+      case "USD":
+        return Dollar();
+      case "CHF":
+        return Frank();
+      default:
+        throw ArgumentError("Unsupported currency code provided: $code");
+    }
+  }
+}
+
+class Dollar extends Currency {
+  Dollar() : super._internal("US Dollar");
+}
+
+class Frank extends Currency {
+  Frank() : super._internal("Swiss Frank");
+}
 
 void main() {
   test("should create proper currency object", () {

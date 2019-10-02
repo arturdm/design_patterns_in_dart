@@ -1,5 +1,31 @@
-import 'package:design_patterns_in_dart/structural/flyweight.dart';
+import 'package:meta/meta.dart';
 import 'package:test_api/test_api.dart';
+
+class Vector3 {
+  static final List<Vector3> _flyweights = List();
+
+  final double x;
+  final double y;
+  final double z;
+
+  factory Vector3({double x = 0, double y = 0, double z = 0}) {
+    return _flyweights.firstWhere(
+            (vector3) => vector3.x == x && vector3.y == y && vector3.z == z,
+        orElse: () {
+          final flyweight = Vector3._internal(x, y, z);
+          _flyweights.add(flyweight);
+          return flyweight;
+        });
+  }
+
+  const Vector3._internal(double this.x, double this.y, double this.z);
+
+  @visibleForTesting
+  static List<Vector3> get flyweights => _flyweights;
+
+  @override
+  String toString() => "Vector3($x, $y, $z)";
+}
 
 void main() {
   setUp(() {

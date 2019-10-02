@@ -1,12 +1,18 @@
-import 'package:design_patterns_in_dart/creational/prototype.dart';
 import 'package:test_api/test_api.dart';
+
+class RegistrationNumber {
+  String number;
+
+  RegistrationNumber(String number) : number = number;
+
+  RegistrationNumber.copy(RegistrationNumber other) : this(other.number);
+}
 
 void main() {
   group("copied registration", () {
     RegistrationNumber registration = RegistrationNumber("WA");
 
-    RegistrationNumber copiedRegistration =
-        RegistrationNumber.copy(registration);
+    RegistrationNumber copiedRegistration = RegistrationNumber.copy(registration);
 
     test("should have the same value", () {
       expect(copiedRegistration.number, equals(registration.number));

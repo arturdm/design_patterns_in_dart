@@ -1,5 +1,49 @@
-import 'package:design_patterns_in_dart/structural/bridge.dart';
 import 'package:test_api/test_api.dart';
+
+class TextField {
+  int backgroundColor;
+  String hint;
+}
+
+abstract class WebApplication {
+  Theme theme;
+
+  WebApplication(Theme this.theme) : assert(theme != null);
+
+  TextField createLoginTextField();
+}
+
+class Blog extends WebApplication {
+  Blog(Theme theme) : super(theme);
+
+  @override
+  TextField createLoginTextField() => TextField()
+    ..backgroundColor = theme.backgroundColor()
+    ..hint = "Please enter your blog login";
+}
+
+class NewsSite extends WebApplication {
+  NewsSite(Theme theme) : super(theme);
+
+  @override
+  TextField createLoginTextField() => TextField()
+    ..backgroundColor = theme.backgroundColor()
+    ..hint = "Provide login to NewsSite";
+}
+
+abstract class Theme {
+  int backgroundColor();
+}
+
+class LightTheme implements Theme {
+  @override
+  int backgroundColor() => 255;
+}
+
+class DarkTheme implements Theme {
+  @override
+  int backgroundColor() => 0;
+}
 
 typedef WebApplication AppGenerator(Theme theme);
 
@@ -47,8 +91,7 @@ void main() {
           TextField field = app.createLoginTextField();
 
           test("should have proper color", () {
-            expect(field.backgroundColor,
-                equals(themeData.expectedBackgroundColor));
+            expect(field.backgroundColor, equals(themeData.expectedBackgroundColor));
           });
 
           test("should have proper hint", () {

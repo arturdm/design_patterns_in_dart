@@ -1,5 +1,24 @@
-import 'package:design_patterns_in_dart/creational/abstract_factory.dart';
 import 'package:test_api/test_api.dart';
+
+abstract class Car {}
+
+class PetrolCar extends Car {}
+
+class ElectricCar extends Car {}
+
+abstract class CarFactory {
+  Car makeCar();
+}
+
+class PetrolCarFactory extends CarFactory {
+  @override
+  Car makeCar() => PetrolCar();
+}
+
+class ElectricCarFactory extends CarFactory {
+  @override
+  Car makeCar() => ElectricCar();
+}
 
 void main() {
   group("petrol car factory", () {
