@@ -28,11 +28,10 @@ Inspired by https://github.com/dbacinski/Design-Patterns-In-Kotlin.
 
 ### Abstract Factory
 
-Still have to find a way to print some object it pointed by a reference.
-
 ### Prototype
 
-There is a nice way of creating objects with a named constructor just like with static factory methods in Java.
+There is a nice way of creating objects with a named constructor just 
+like with static factory methods in Java.
 
 ### Builder
 
@@ -45,11 +44,15 @@ This one can be done using factory constructor.
 ### Singleton
 
 This singleton implementation utilizes lazy loading of global variables.
-There is also a way of implementing a singleton with a factory constructor that always returns the same instance.
+There is also a way of implementing a singleton with a factory 
+constructor that always returns the same instance.
 
 ## Structural design patterns
 
 ### Adapter
+
+Provides a link between two incompatible types by wrapping one type 
+with a class that supports the interface required by the client.
 
 ### Bridge
 
@@ -66,3 +69,23 @@ There is also a way of implementing a singleton with a factory constructor that 
 ## Behavioural design patterns
 
 ### Chain Of Responsibility
+
+### Command
+
+### Interpreter
+
+### Iterator
+
+### Mediator
+
+### Memento
+
+### Observer
+
+### State
+
+### Strategy
+
+### Template Method
+
+### Visitor
