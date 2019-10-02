@@ -23,10 +23,13 @@ Inspired by https://github.com/dbacinski/Design-Patterns-In-Kotlin.
     * [Proxy](#proxy)
 * [Behavioural design patterns](#behavioural-design-patterns)
     * [Chain Of Responsibility](#chain-of-responsibility)
+    * [Command](#command)
 
 ## Creational design patterns
 
 ### Abstract Factory
+
+Still have to find a way to print some object it pointed by a reference.
 
 ### Prototype
 
@@ -71,6 +74,10 @@ with a class that supports the interface required by the client.
 ### Chain Of Responsibility
 
 ### Command
+
+Used to express a request including the call to be made and the required 
+parameters in a command object. It may then be executed immediately or 
+held for later use.
 
 ### Interpreter
 
