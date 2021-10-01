@@ -5,8 +5,11 @@ class Color {
   int _green;
   int _blue;
 
-  Color.rgb({int red, int green, int blue})
-      : assert(0 <= red && red <= 255),
+  Color.rgb({required int red, required int green, required int blue})
+      : _red = red,
+        _green = green,
+        _blue = blue,
+        assert(0 <= red && red <= 255),
         assert(0 <= green && green <= 255),
         assert(0 <= blue && blue <= 255);
 

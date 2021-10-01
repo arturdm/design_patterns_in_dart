@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:test/test.dart';
 
 class TestSubject {
@@ -6,7 +5,7 @@ class TestSubject {
   final double blushResponse;
   final bool isOrganic;
 
-  TestSubject({@required this.pupilDiameter, @required this.blushResponse, @required this.isOrganic});
+  TestSubject({required this.pupilDiameter, required this.blushResponse, required this.isOrganic});
 }
 
 abstract class RealnessTesting {

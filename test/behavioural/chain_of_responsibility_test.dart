@@ -1,5 +1,4 @@
-import 'package:meta/meta.dart';
-import 'package:mockito/mockito.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:test/test.dart';
 
 class Event {
@@ -30,10 +29,14 @@ final EventHandler doNothingEventHandler = _DoNothingEventHandler();
 
 class Widget {
   final String name;
-  final Widget child;
+  final Widget? child;
   final EventHandler handler;
 
-  Widget({@required this.name, this.child, EventHandler handler}) : this.handler = handler ?? doNothingEventHandler;
+  Widget({
+    required this.name,
+    this.child,
+    EventHandler? handler,
+  }) : this.handler = handler ?? doNothingEventHandler;
 
   /**
    * Handles [event].
@@ -52,40 +55,42 @@ class Widget {
 class MockEventHandler extends Mock implements EventHandler {}
 
 void main() {
-  Widget tree;
+  late Widget tree;
   Event event = Event.move();
-  EventHandler parentHandler;
-  EventHandler childHandler;
+  late EventHandler parentHandler;
+  late EventHandler childHandler;
 
   setUp(() {
     parentHandler = MockEventHandler();
     childHandler = MockEventHandler();
     tree = Widget(name: "parent", handler: parentHandler, child: Widget(name: "child", handler: childHandler));
+    registerFallbackValue(tree);
+    registerFallbackValue(event);
   });
 
   test("should handle event by parent", () {
     // given
-    when(parentHandler.handle(any, any)).thenReturn(true);
-    when(childHandler.handle(any, any)).thenReturn(true);
+    when(() => parentHandler.handle(any(), any())).thenReturn(true);
+    when(() => childHandler.handle(any(), any())).thenReturn(true);
 
     // when
     tree.handle(event);
 
     // then
-    verify(parentHandler.handle(any, any)).called(equals(1));
+    verify(() => parentHandler.handle(any(), any())).called(equals(1));
     verifyNoMoreInteractions(childHandler);
   });
 
   test("should pass event to child", () {
     // given
-    when(parentHandler.handle(any, any)).thenReturn(false);
-    when(childHandler.handle(any, any)).thenReturn(true);
+    when(() => parentHandler.handle(any(), any())).thenReturn(false);
+    when(() => childHandler.handle(any(), any())).thenReturn(true);
 
     // when
     tree.handle(event);
 
     // then
-    verify(parentHandler.handle(any, any)).called(equals(1));
-    verify(childHandler.handle(any, any)).called(equals(1));
+    verify(() => parentHandler.handle(any(), any())).called(equals(1));
+    verify(() => childHandler.handle(any(), any())).called(equals(1));
   });
 }

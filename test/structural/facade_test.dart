@@ -1,11 +1,9 @@
-import 'package:meta/meta.dart';
 import 'package:test/test.dart';
 
 class RoomRepository {
   final List<Room> _rooms = [];
 
   void add(Room room) {
-    assert(room != null);
     _rooms.add(room);
   }
 
@@ -15,7 +13,7 @@ class RoomRepository {
 class Room {
   final String number;
 
-  Room(this.number);
+  const Room(this.number);
 
   @override
   String toString() => "Room $number";
@@ -34,16 +32,14 @@ class Reservation {
   final DateTime to;
   final String roomNumber;
 
-  Reservation({@required this.from, @required this.to, @required this.roomNumber}) : assert(from.isBefore(to));
+  Reservation({required this.from, required this.to, required this.roomNumber}) : assert(from.isBefore(to));
 }
 
 class HotelFacade {
   final RoomRepository _roomRepository;
   final ReservationRepository _reservationRepository;
 
-  HotelFacade(this._roomRepository, this._reservationRepository)
-      : assert(_roomRepository != null),
-        assert(_reservationRepository != null);
+  const HotelFacade(this._roomRepository, this._reservationRepository);
 
   Iterable<Room> findVacantRooms(DateTime from, DateTime to) {
     assert(from.isBefore(to));
@@ -59,7 +55,6 @@ class HotelFacade {
       firstFrom.isAfter(secondTo) || firstTo.isBefore(secondFrom);
 
   void addReservation(Reservation reservation) {
-    assert(reservation != null);
     _reservationRepository.add(reservation);
   }
 
@@ -72,7 +67,7 @@ class HotelFacade {
 
 void main() {
   group("hotel facade", () {
-    HotelFacade facade;
+    late HotelFacade facade;
     Room room = Room("404");
     DateTime from = DateTime(2018, 12, 24);
     DateTime to = DateTime(2018, 12, 30);

@@ -1,14 +1,14 @@
 import 'package:test/test.dart';
 
 class TextField {
-  int backgroundColor;
-  String hint;
+  int? backgroundColor;
+  String? hint;
 }
 
 abstract class WebApplication {
   Theme theme;
 
-  WebApplication(Theme this.theme) : assert(theme != null);
+  WebApplication(this.theme);
 
   TextField createLoginTextField();
 }
@@ -48,38 +48,46 @@ class DarkTheme implements Theme {
 typedef WebApplication AppGenerator(Theme theme);
 
 class AppData {
-  String name;
-  AppGenerator appGenerator;
-  String expectedHint;
+  final String name;
+  final AppGenerator appGenerator;
+  final String expectedHint;
+
+  AppData({required this.name, required this.appGenerator, required this.expectedHint});
 }
 
 class ThemeData {
-  String name;
-  Theme theme;
-  int expectedBackgroundColor;
+  final String name;
+  final Theme theme;
+  final int expectedBackgroundColor;
+
+  ThemeData({required this.name, required this.theme, required this.expectedBackgroundColor});
 }
 
 void main() {
   var appData = [
-    AppData()
-      ..name = "blog"
-      ..appGenerator = ((Theme theme) => Blog(theme))
-      ..expectedHint = "Please enter your blog login",
-    AppData()
-      ..name = "news site"
-      ..appGenerator = ((Theme theme) => NewsSite(theme))
-      ..expectedHint = "Provide login to NewsSite"
+    AppData(
+      name: "blog",
+      appGenerator: ((Theme theme) => Blog(theme)),
+      expectedHint: "Please enter your blog login",
+    ),
+    AppData(
+      name: "news site",
+      appGenerator: ((Theme theme) => NewsSite(theme)),
+      expectedHint: "Provide login to NewsSite",
+    ),
   ];
 
   var themeData = [
-    ThemeData()
-      ..name = "dark theme"
-      ..theme = DarkTheme()
-      ..expectedBackgroundColor = 0,
-    ThemeData()
-      ..name = "light theme"
-      ..theme = LightTheme()
-      ..expectedBackgroundColor = 255
+    ThemeData(
+      name: "dark theme",
+      theme: DarkTheme(),
+      expectedBackgroundColor: 0,
+    ),
+    ThemeData(
+      name: "light theme",
+      theme: LightTheme(),
+      expectedBackgroundColor: 255,
+    ),
   ];
 
   appData.forEach((AppData appData) {
