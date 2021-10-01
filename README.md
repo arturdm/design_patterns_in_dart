@@ -1,6 +1,6 @@
 # Design patterns (GoF) using Dart language
 
-[![Build Status](https://travis-ci.org/arturdm/design_patterns_in_dart.svg?branch=master)](https://travis-ci.org/arturdm/design_patterns_in_dart)
+[![Build Status](https://github.com/arturdm/design_patterns_in_dart/actions/workflows/test.yml/badge.svg)](https://github.com/arturdm/design_patterns_in_dart/actions/workflows/test.yml)
 
 This repository contains sample implementations of GoF design patterns in Dart.
 
@@ -24,6 +24,7 @@ Inspired by https://github.com/dbacinski/Design-Patterns-In-Kotlin.
 * [Behavioural design patterns](#behavioural-design-patterns)
     * [Chain Of Responsibility](#chain-of-responsibility)
     * [Command](#command)
+    * [Observer](#observer)
 
 ## Creational design patterns
 
@@ -88,6 +89,11 @@ held for later use.
 ### Memento
 
 ### Observer
+
+The observer pattern is used to allow an object to publish changes to its state.
+Other objects subscribe to be immediately notified of any changes.
+
+[code](test/behavioural/observer_test.dart)
 
 ### State
 
