@@ -1,8 +1,8 @@
 class Driver {
-  String firstName;
-  String lastName;
+  final String? firstName;
+  final String? lastName;
 
-  Driver({String this.firstName, String this.lastName});
+  Driver({this.firstName, this.lastName});
 
   @override
   String toString() => "$firstName $lastName";
@@ -10,8 +10,8 @@ class Driver {
 
 // TODO Consider cascade (..) here
 class DriverBuilder {
-  String _firstName;
-  String _lastName;
+  String? _firstName;
+  String? _lastName;
 
   DriverBuilder firstName(String firstName) {
     _firstName = firstName;
@@ -29,8 +29,7 @@ class DriverBuilder {
 }
 
 void main() {
-  DriverBuilder driverBuilder =
-      DriverBuilder().firstName("Robert").lastName("Kubica");
+  DriverBuilder driverBuilder = DriverBuilder().firstName("Robert").lastName("Kubica");
 
   print("${driverBuilder.build()}'s driver entry created");
 }

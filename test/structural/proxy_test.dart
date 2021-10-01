@@ -22,13 +22,13 @@ class UnmodifiableSet<E> implements Set<E> {
   void removeWhere(bool test(E element)) => throw unsupported;
 
   @override
-  void retainAll(Iterable<Object> elements) => throw unsupported;
+  void retainAll(Iterable<Object?> elements) => throw unsupported;
 
   @override
-  void removeAll(Iterable<Object> elements) => throw unsupported;
+  void removeAll(Iterable<Object?> elements) => throw unsupported;
 
   @override
-  bool remove(Object value) => throw unsupported;
+  bool remove(Object? value) => throw unsupported;
 
   @override
   void addAll(Iterable<E> elements) => throw unsupported;
@@ -43,11 +43,10 @@ class UnmodifiableSet<E> implements Set<E> {
 }
 
 void main() {
-  Set<int> mutableSet;
-  Set<int> unmodifiableSet;
+  late Set<int> unmodifiableSet;
 
   setUp(() {
-    mutableSet = Set.of([1, 2, 3]);
+    Set<int> mutableSet = Set.of([1, 2, 3]);
     unmodifiableSet = UnmodifiableSet.unmodifiable(mutableSet);
   });
 

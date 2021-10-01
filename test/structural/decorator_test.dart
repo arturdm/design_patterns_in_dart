@@ -1,28 +1,28 @@
 import 'package:test/test.dart';
 
 class StringDecorator {
-  final String string;
+  final String? string;
 
-  StringDecorator(String this.string);
+  const StringDecorator(this.string);
 
   StringDecorator toCamelCase() {
-    if (string == null || string.isEmpty) {
+    if (string == null || string!.isEmpty) {
       return StringDecorator(string);
     }
 
-    var lowerCaseFirstLetter = (String s) => "${s[0].toLowerCase()}${s.substring(1)}";
+    var lowerCaseFirstLetter = (String? s) => "${s?[0].toLowerCase()}${s?.substring(1)}";
 
     var upperCaseFirstLetterLowerCaseRest =
         (String s) => s.isEmpty ? s : "${s[0].toUpperCase()}${s.substring(1).toLowerCase()}";
 
-    String camelCasedString = string.splitMapJoin(RegExp("[\w_ ]+"),
+    String? camelCasedString = string?.splitMapJoin(RegExp("[\w_ ]+"),
         onMatch: (matchedSplitter) => "", onNonMatch: (nonMatch) => upperCaseFirstLetterLowerCaseRest(nonMatch));
 
     return StringDecorator(lowerCaseFirstLetter(camelCasedString));
   }
 
   @override
-  String toString() => string;
+  String toString() => string.toString();
 }
 
 void main() {

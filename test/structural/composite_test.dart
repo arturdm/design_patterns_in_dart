@@ -5,7 +5,7 @@ abstract class Widget {}
 class WidgetGroup implements Widget {
   final List<Widget> children;
 
-  WidgetGroup({List<Widget> this.children});
+  const WidgetGroup({required this.children});
 
   @override
   String toString() {
@@ -23,7 +23,7 @@ class TextWidget implements Widget {
   String toString() => "TextWidget('$text')";
 }
 
-Widget createWidgetTree() => WidgetGroup(children: [
+WidgetGroup createWidgetTree() => WidgetGroup(children: [
       TextWidget("some text"),
       WidgetGroup(children: [TextWidget("more"), TextWidget("text")])
     ]);
@@ -33,9 +33,9 @@ void main() {
     test("should get a node", () {
       WidgetGroup tree = createWidgetTree();
 
-      TextWidget first = tree.children.first;
+      Widget first = tree.children.first;
 
-      expect(first.text, equals("some text"));
+      expect((first as TextWidget).text, equals("some text"));
     });
 
     test("should remove a node", () {

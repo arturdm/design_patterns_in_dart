@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -24,12 +23,12 @@ abstract class Command {
 }
 
 class CakeOrderCommand implements Command {
-  Cook receiver;
-  String cakeName;
+  final Cook receiver;
+  final String cakeName;
 
   CakeOrderCommand({
-    @required this.receiver,
-    @required this.cakeName,
+    required this.receiver,
+    required this.cakeName,
   });
 
   @override
@@ -39,12 +38,12 @@ class CakeOrderCommand implements Command {
 }
 
 class CoffeeOrderCommand implements Command {
-  Cook receiver;
-  String coffeeName;
+  final Cook receiver;
+  final String coffeeName;
 
   CoffeeOrderCommand({
-    @required this.receiver,
-    @required this.coffeeName,
+    required this.receiver,
+    required this.coffeeName,
   });
 
   @override
