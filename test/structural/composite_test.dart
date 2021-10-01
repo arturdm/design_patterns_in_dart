@@ -1,4 +1,4 @@
-import 'package:test_api/test_api.dart';
+import 'package:test/test.dart';
 
 abstract class Widget {}
 
@@ -23,18 +23,10 @@ class TextWidget implements Widget {
   String toString() => "TextWidget('$text')";
 }
 
-Widget createWidgetTree() =>
-    WidgetGroup(
-        children: [
-          TextWidget("some text"),
-          WidgetGroup(
-              children: [
-                TextWidget("more"),
-                TextWidget("text")
-              ]
-          )
-        ]
-    );
+Widget createWidgetTree() => WidgetGroup(children: [
+      TextWidget("some text"),
+      WidgetGroup(children: [TextWidget("more"), TextWidget("text")])
+    ]);
 
 void main() {
   group("widget tree", () {
