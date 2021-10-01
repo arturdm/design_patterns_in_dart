@@ -1,6 +1,6 @@
 import 'package:meta/meta.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test_api/test_api.dart';
+import 'package:test/test.dart';
 
 class Event {
   final EventType type;
@@ -33,8 +33,7 @@ class Widget {
   final Widget child;
   final EventHandler handler;
 
-  Widget({@required this.name, this.child, EventHandler handler})
-      : this.handler = handler ?? doNothingEventHandler;
+  Widget({@required this.name, this.child, EventHandler handler}) : this.handler = handler ?? doNothingEventHandler;
 
   /**
    * Handles [event].
@@ -61,10 +60,7 @@ void main() {
   setUp(() {
     parentHandler = MockEventHandler();
     childHandler = MockEventHandler();
-    tree = Widget(
-        name: "parent",
-        handler: parentHandler,
-        child: Widget(name: "child", handler: childHandler));
+    tree = Widget(name: "parent", handler: parentHandler, child: Widget(name: "child", handler: childHandler));
   });
 
   test("should handle event by parent", () {
