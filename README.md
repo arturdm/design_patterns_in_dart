@@ -32,24 +32,34 @@ Inspired by https://github.com/dbacinski/Design-Patterns-In-Kotlin.
 
 Still have to find a way to print some object it pointed by a reference.
 
+[See code example](test/creational/abstract_factory_test.dart)
+
 ### Prototype
 
 There is a nice way of creating objects with a named constructor just 
 like with static factory methods in Java.
 
+[See code example](test/creational/prototype_test.dart)
+
 ### Builder
 
 There is no support for inner classes.
 
+[See code example](test/creational/builder_test.dart)
+
 ### Factory Method
 
 This one can be done using factory constructor.
+
+[See code example](test/creational/factory_method_test.dart)
 
 ### Singleton
 
 This singleton implementation utilizes lazy loading of global variables.
 There is also a way of implementing a singleton with a factory 
 constructor that always returns the same instance.
+
+[See code example](test/creational/singleton_test.dart)
 
 ## Structural design patterns
 
@@ -58,27 +68,45 @@ constructor that always returns the same instance.
 Provides a link between two incompatible types by wrapping one type 
 with a class that supports the interface required by the client.
 
+[See code example](test/structural/adapter_test.dart)
+
 ### Bridge
+
+[See code example](test/structural/bridge_test.dart)
 
 ### Composite
 
+[See code example](test/structural/composite_test.dart)
+
 ### Decorator
+
+[See code example](test/structural/decorator_test.dart)
 
 ### Facade
 
+[See code example](test/structural/facade_test.dart)
+
 ### Flyweight
 
+[See code example](test/structural/flyweight_test.dart)
+
 ### Proxy
+
+[See code example](test/structural/proxy_test.dart)
 
 ## Behavioural design patterns
 
 ### Chain Of Responsibility
+
+[See code example](test/behavioural/chain_of_responsibility_test.dart)
 
 ### Command
 
 Used to express a request including the call to be made and the required 
 parameters in a command object. It may then be executed immediately or 
 held for later use.
+
+[See code example](test/behavioural/command_test.dart)
 
 ### Interpreter
 
@@ -98,6 +126,8 @@ Other objects subscribe to be immediately notified of any changes.
 ### State
 
 ### Strategy
+
+[See code example](test/behavioural/strategy_test.dart)
 
 ### Template Method
 
