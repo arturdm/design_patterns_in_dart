@@ -1,7 +1,7 @@
 name: design_patterns_in_dart
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.14.0 <3.0.0'
 
 dev_dependencies:
-  mocktail: ^0.1.4
-  test: ^1.17.12
+  mocktail: ^0.3.0
+  test: ^1.21.4
