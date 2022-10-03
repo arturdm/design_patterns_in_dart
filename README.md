@@ -7,6 +7,7 @@ This repository contains sample implementations of GoF design patterns in Dart.
 Inspired by https://github.com/dbacinski/Design-Patterns-In-Kotlin.
 
 ## Table of contents
+
 * [Creational design patterns](#creational-design-patterns)
     * [Abstract Factory](#abstract-factory)
     * [Prototype](#prototype)
@@ -36,8 +37,8 @@ Still have to find a way to print some object it pointed by a reference.
 
 ### Prototype
 
-There is a nice way of creating objects with a named constructor just 
-like with static factory methods in Java.
+There is a nice way of creating objects with a named constructor just like with static factory
+methods in Java.
 
 [See code example](test/creational/prototype_test.dart)
 
@@ -55,9 +56,8 @@ This one can be done using factory constructor.
 
 ### Singleton
 
-This singleton implementation utilizes lazy loading of global variables.
-There is also a way of implementing a singleton with a factory 
-constructor that always returns the same instance.
+This singleton implementation utilizes lazy loading of global variables. There is also a way of
+implementing a singleton with a factory constructor that always returns the same instance.
 
 [See code example](test/creational/singleton_test.dart)
 
@@ -65,8 +65,8 @@ constructor that always returns the same instance.
 
 ### Adapter
 
-Provides a link between two incompatible types by wrapping one type 
-with a class that supports the interface required by the client.
+Provides a link between two incompatible types by wrapping one type with a class that supports the
+interface required by the client.
 
 [See code example](test/structural/adapter_test.dart)
 
@@ -102,9 +102,8 @@ with a class that supports the interface required by the client.
 
 ### Command
 
-Used to express a request including the call to be made and the required 
-parameters in a command object. It may then be executed immediately or 
-held for later use.
+Used to express a request including the call to be made and the required parameters in a command
+object. It may then be executed immediately or held for later use.
 
 [See code example](test/behavioural/command_test.dart)
 
@@ -118,8 +117,8 @@ held for later use.
 
 ### Observer
 
-The observer pattern is used to allow an object to publish changes to its state.
-Other objects subscribe to be immediately notified of any changes.
+The observer pattern is used to allow an object to publish changes to its state. Other objects
+subscribe to be immediately notified of any changes.
 
 [code](test/behavioural/observer_test.dart)
 
@@ -130,5 +129,10 @@ Other objects subscribe to be immediately notified of any changes.
 [See code example](test/behavioural/strategy_test.dart)
 
 ### Template Method
+
+The template method pattern is used to define the basic steps of an algorithm and allow the
+implementation of the individual steps to be changed.
+
+[See code example](test/behavioural/template_method_test.dart)
 
 ### Visitor
