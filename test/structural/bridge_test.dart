@@ -64,7 +64,7 @@ class ThemeData {
 }
 
 void main() {
-  var appData = [
+  final appData = [
     AppData(
       name: "blog",
       appGenerator: ((Theme theme) => Blog(theme)),
@@ -77,7 +77,7 @@ void main() {
     ),
   ];
 
-  var themeData = [
+  final themeData = [
     ThemeData(
       name: "dark theme",
       theme: DarkTheme(),

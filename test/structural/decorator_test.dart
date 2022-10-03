@@ -10,13 +10,15 @@ class StringDecorator {
       return StringDecorator(string);
     }
 
-    var lowerCaseFirstLetter = (String? s) => "${s?[0].toLowerCase()}${s?.substring(1)}";
+    final lowerCaseFirstLetter =
+        (String? s) => "${s?[0].toLowerCase()}${s?.substring(1)}";
 
-    var upperCaseFirstLetterLowerCaseRest =
-        (String s) => s.isEmpty ? s : "${s[0].toUpperCase()}${s.substring(1).toLowerCase()}";
+    final upperCaseFirstLetterLowerCaseRest = (String s) =>
+        s.isEmpty ? s : "${s[0].toUpperCase()}${s.substring(1).toLowerCase()}";
 
     String? camelCasedString = string?.splitMapJoin(RegExp("[\w_ ]+"),
-        onMatch: (matchedSplitter) => "", onNonMatch: (nonMatch) => upperCaseFirstLetterLowerCaseRest(nonMatch));
+        onMatch: (matchedSplitter) => "",
+        onNonMatch: (nonMatch) => upperCaseFirstLetterLowerCaseRest(nonMatch));
 
     return StringDecorator(lowerCaseFirstLetter(camelCasedString));
   }
@@ -26,7 +28,13 @@ class StringDecorator {
 }
 
 void main() {
-  const testData = {null: null, "": "", "a": "a", "ALL_CAPS": "allCaps", " Mixed_case STRING": "mixedCaseString"};
+  const testData = {
+    null: null,
+    "": "",
+    "a": "a",
+    "ALL_CAPS": "allCaps",
+    " Mixed_case STRING": "mixedCaseString",
+  };
 
   testData.forEach((input, expected) {
     test("should camel case '${input}' into '$expected'", () {

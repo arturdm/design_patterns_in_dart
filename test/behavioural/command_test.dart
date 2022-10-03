@@ -53,7 +53,7 @@ class CoffeeOrderCommand implements Command {
 }
 
 class Cook {
-  var _currentOrder = "";
+  String _currentOrder = "";
 
   void prepareCake(String name) {
     _appendOrder(name);
