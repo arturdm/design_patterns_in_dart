@@ -135,4 +135,9 @@ subscribe to be immediately notified of any changes.
 
 ### Template Method
 
+The template method pattern is used to define the basic steps of an algorithm and allow the
+implementation of the individual steps to be changed.
+
+[See code example](test/behavioural/template_method_test.dart)
+
 ### Visitor
