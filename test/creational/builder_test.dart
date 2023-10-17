@@ -29,7 +29,7 @@ class DriverBuilder {
 }
 
 void main() {
-  DriverBuilder driverBuilder = DriverBuilder().firstName("Robert").lastName("Kubica");
+  final driverBuilder = DriverBuilder().firstName("Robert").lastName("Kubica");
 
   print("${driverBuilder.build()}'s driver entry created");
 }

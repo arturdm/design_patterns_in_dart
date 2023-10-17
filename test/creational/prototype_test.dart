@@ -10,9 +10,8 @@ class RegistrationNumber {
 
 void main() {
   group("copied registration", () {
-    RegistrationNumber registration = RegistrationNumber("WA");
-
-    RegistrationNumber copiedRegistration = RegistrationNumber.copy(registration);
+    final registration = RegistrationNumber("WA");
+    final copiedRegistration = RegistrationNumber.copy(registration);
 
     test("should have the same value", () {
       expect(copiedRegistration.number, equals(registration.number));

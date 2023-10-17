@@ -5,7 +5,11 @@ class TestSubject {
   final double blushResponse;
   final bool isOrganic;
 
-  TestSubject({required this.pupilDiameter, required this.blushResponse, required this.isOrganic});
+  TestSubject({
+    required this.pupilDiameter,
+    required this.blushResponse,
+    required this.isOrganic,
+  });
 }
 
 abstract class RealnessTesting {
@@ -37,7 +41,11 @@ class BladeRunner {
 }
 
 void main() {
-  TestSubject rachel = TestSubject(pupilDiameter: 30.2, blushResponse: 0.3, isOrganic: false);
+  TestSubject rachel = TestSubject(
+    pupilDiameter: 30.2,
+    blushResponse: 0.3,
+    isOrganic: false,
+  );
 
   test("Deckard's method should return false for Rachel", () {
     // given

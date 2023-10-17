@@ -32,7 +32,8 @@ class Reservation {
   final DateTime to;
   final String roomNumber;
 
-  Reservation({required this.from, required this.to, required this.roomNumber}) : assert(from.isBefore(to));
+  Reservation({required this.from, required this.to, required this.roomNumber})
+      : assert(from.isBefore(to));
 }
 
 class HotelFacade {
@@ -48,10 +49,16 @@ class HotelFacade {
 
   bool _isVacant(Room room, DateTime from, DateTime to) {
     return _reservationRepository.reservations.every((reservation) =>
-        reservation.roomNumber != room.number || _intersects(reservation.from, reservation.to, from, to));
+        reservation.roomNumber != room.number ||
+        _intersects(reservation.from, reservation.to, from, to));
   }
 
-  bool _intersects(DateTime firstFrom, DateTime firstTo, DateTime secondFrom, DateTime secondTo) =>
+  bool _intersects(
+    DateTime firstFrom,
+    DateTime firstTo,
+    DateTime secondFrom,
+    DateTime secondTo,
+  ) =>
       firstFrom.isAfter(secondTo) || firstTo.isBefore(secondFrom);
 
   void addReservation(Reservation reservation) {
@@ -60,7 +67,8 @@ class HotelFacade {
 
   Iterable<Reservation> findReservations(DateTime from, DateTime to) {
     return _reservationRepository.reservations.where((reservation) =>
-        (reservation.from.isAfter(from) || reservation.from.isAtSameMomentAs(from)) &&
+        (reservation.from.isAfter(from) ||
+            reservation.from.isAtSameMomentAs(from)) &&
         (reservation.to.isBefore(to) || reservation.to.isAtSameMomentAs(to)));
   }
 }
@@ -80,7 +88,11 @@ void main() {
 
     group("when adding reservation", () {
       initializeFacade();
-      final reservation = Reservation(from: from, to: to, roomNumber: room.number);
+      final reservation = Reservation(
+        from: from,
+        to: to,
+        roomNumber: room.number,
+      );
 
       facade.addReservation(reservation);
 

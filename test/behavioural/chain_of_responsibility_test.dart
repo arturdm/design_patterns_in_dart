@@ -63,7 +63,11 @@ void main() {
   setUp(() {
     parentHandler = MockEventHandler();
     childHandler = MockEventHandler();
-    tree = Widget(name: "parent", handler: parentHandler, child: Widget(name: "child", handler: childHandler));
+    tree = Widget(
+      name: "parent",
+      handler: parentHandler,
+      child: Widget(name: "child", handler: childHandler),
+    );
     registerFallbackValue(tree);
     registerFallbackValue(event);
   });

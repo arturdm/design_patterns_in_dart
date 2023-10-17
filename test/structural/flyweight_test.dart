@@ -9,11 +9,14 @@ class Vector3 {
   final double z;
 
   factory Vector3({double x = 0, double y = 0, double z = 0}) {
-    return _flyweights.firstWhere((vector3) => vector3.x == x && vector3.y == y && vector3.z == z, orElse: () {
-      final flyweight = Vector3._internal(x, y, z);
-      _flyweights.add(flyweight);
-      return flyweight;
-    });
+    return _flyweights.firstWhere(
+      (vector3) => vector3.x == x && vector3.y == y && vector3.z == z,
+      orElse: () {
+        final flyweight = Vector3._internal(x, y, z);
+        _flyweights.add(flyweight);
+        return flyweight;
+      },
+    );
   }
 
   const Vector3._internal(double this.x, double this.y, double this.z);
