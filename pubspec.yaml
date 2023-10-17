@@ -1,6 +1,6 @@
 name: design_patterns_in_dart
 environment:
-  sdk: '>=2.14.0 <3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
 
 dev_dependencies:
   meta: ^1.11.0
