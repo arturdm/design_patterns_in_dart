@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: dart-lang/setup-dart@v1.2
+      - uses: dart-lang/setup-dart@v1.6.0
         with:
           sdk: stable
       - name: checkout
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v4.1.0
       - name: install dependencies
         run: dart pub get
       - name: analyze Dart
