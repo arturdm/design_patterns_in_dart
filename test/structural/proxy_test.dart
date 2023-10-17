@@ -3,7 +3,8 @@ import 'dart:mirrors';
 import 'package:test/test.dart';
 
 class UnmodifiableSet<E> implements Set<E> {
-  static final unsupported = UnsupportedError("This method is not supported on unmodifiable set");
+  static final unsupported =
+      UnsupportedError("This method is not supported on unmodifiable set");
 
   final InstanceMirror _delegateMirror;
 

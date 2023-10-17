@@ -52,7 +52,11 @@ class AppData {
   final AppGenerator appGenerator;
   final String expectedHint;
 
-  AppData({required this.name, required this.appGenerator, required this.expectedHint});
+  AppData({
+    required this.name,
+    required this.appGenerator,
+    required this.expectedHint,
+  });
 }
 
 class ThemeData {
@@ -60,7 +64,11 @@ class ThemeData {
   final Theme theme;
   final int expectedBackgroundColor;
 
-  ThemeData({required this.name, required this.theme, required this.expectedBackgroundColor});
+  ThemeData({
+    required this.name,
+    required this.theme,
+    required this.expectedBackgroundColor,
+  });
 }
 
 void main() {
@@ -99,7 +107,10 @@ void main() {
           TextField field = app.createLoginTextField();
 
           test("should have proper color", () {
-            expect(field.backgroundColor, equals(themeData.expectedBackgroundColor));
+            expect(
+              field.backgroundColor,
+              equals(themeData.expectedBackgroundColor),
+            );
           });
 
           test("should have proper hint", () {

@@ -32,7 +32,9 @@ class Color {
   }
 
   int _assertInRange(int color) {
-    return 0 <= color && color <= 255 ? color : throw "color $color out of <0,255> range";
+    return 0 <= color && color <= 255
+        ? color
+        : throw "color $color out of <0,255> range";
   }
 }
 

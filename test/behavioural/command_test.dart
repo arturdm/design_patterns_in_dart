@@ -4,8 +4,14 @@ void main() {
   test("should process order commands", () {
     // given
     final cook = Cook();
-    final cakeCommand = CakeOrderCommand(receiver: cook, cakeName: "cheesecake");
-    final coffeeCommand = CoffeeOrderCommand(receiver: cook, coffeeName: "latte");
+    final cakeCommand = CakeOrderCommand(
+      receiver: cook,
+      cakeName: "cheesecake",
+    );
+    final coffeeCommand = CoffeeOrderCommand(
+      receiver: cook,
+      coffeeName: "latte",
+    );
     final waiter = Invoker();
 
     // when
