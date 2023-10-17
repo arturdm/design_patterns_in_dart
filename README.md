@@ -26,6 +26,7 @@ Inspired by https://github.com/dbacinski/Design-Patterns-In-Kotlin.
     * [Chain Of Responsibility](#chain-of-responsibility)
     * [Command](#command)
     * [Observer](#observer)
+    * [Interpreter](#interpreter)
 
 ## Creational design patterns
 
