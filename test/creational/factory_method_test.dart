@@ -6,14 +6,11 @@ abstract class Currency {
   Currency._internal(String this.name);
 
   factory Currency.forCode(String code) {
-    switch (code) {
-      case "USD":
-        return Dollar();
-      case "CHF":
-        return Frank();
-      default:
-        throw ArgumentError("Unsupported currency code provided: $code");
-    }
+    return switch (code) {
+      "USD" => Dollar(),
+      "CHF" => Frank(),
+      _ => throw ArgumentError("Unsupported currency code provided: $code"),
+    };
   }
 }
 
