@@ -109,6 +109,10 @@ object. It may then be executed immediately or held for later use.
 
 ### Interpreter
 
+Used to define the grammar for instructions that form part of a language or notation, whilst allowing the grammar to be easily extended.
+
+[See code example](test/behavioural/interpreter_test.dart)
+
 ### Iterator
 
 ### Mediator

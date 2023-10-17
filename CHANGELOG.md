@@ -6,5 +6,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+- Add interpreter pattern 2023-10-17
 - Bump dependencies 2023-10-17
 
